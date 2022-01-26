@@ -4,18 +4,20 @@ import { lazy, Suspense, useContext } from "react";
 // import UserProvider from './context/UserProvider';
 import AccountProvider from "./context/AccountProvider";
 
-// import TemplateProvider from './templates/TemplateProvider';
+import TemplateProvider from "./templates/TemplateProvider";
 import Loader from "./components/Loader";
 
 const Messenger = lazy(() => import("./components/Messenger"));
 
 function App() {
   return (
-    <Suspense fallback={<Loader />}>
+    <TemplateProvider>
       <AccountProvider>
-        <Messenger />
+        <Suspense fallback={<Loader />}>
+          <Messenger />
+        </Suspense>
       </AccountProvider>
-    </Suspense>
+    </TemplateProvider>
   );
 }
 

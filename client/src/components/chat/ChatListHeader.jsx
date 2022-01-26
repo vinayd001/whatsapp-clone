@@ -8,11 +8,12 @@ import { AccountContext } from "../../context/AccountProvider";
 //components
 import ChatListMenuDropDown from "./ChatListMenuDropDown";
 // import HeaderMenu from "./HeaderMenu";
-// import InfoDrawer from "../../drawer/Drawer";
+import InfoDrawer from "../drawer/InfoDrawer";
 
 const useStyles = makeStyles({
   header: {
     height: 35,
+    // height: 109;
     background: "#ededed",
     display: "flex",
     padding: "10px 16px",
@@ -35,6 +36,7 @@ const useStyles = makeStyles({
     height: 37,
     width: 37,
     borderRadius: "50%",
+    cursor: "pointer",
   },
 });
 
@@ -56,7 +58,7 @@ const ChatListHeader = () => {
           src={account.imageUrl}
           alt="profile"
           className={classes.avatar}
-          onClick={() => toggleDrawer()}
+          onClick={toggleDrawer}
         />
         <Box className={classes.chatIcons}>
           <StatusIcon />
@@ -64,7 +66,7 @@ const ChatListHeader = () => {
           <ChatListMenuDropDown />
         </Box>
       </Box>
-      {/* <InfoDrawer open={openDrawer} setOpen={setOpenDrawer} profile={true} /> */}
+      <InfoDrawer open={openDrawer} setOpen={setOpenDrawer} profile={true} />
     </>
   );
 };

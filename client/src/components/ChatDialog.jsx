@@ -35,6 +35,9 @@ const style = {
     boxShadow: "none",
     overflow: "hidden",
   },
+  dialogRoot: {
+    zIndex: "1200",
+  },
 };
 
 const ChatDialog = ({ classes }) => {

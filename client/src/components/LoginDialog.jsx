@@ -56,13 +56,13 @@ const LoginDialog = ({ classes }) => {
   const clientId =
     "125589237579-aksuk676caaikg8ia3nts2m87pgf7jm8.apps.googleusercontent.com";
   const qurl = "https://www.ginifab.com/feeds/qr_code/img/qrcode.jpg";
-  const { account, setAccount } = useContext(AccountContext);
+  const { setAccount, setShowlogoutButton } = useContext(AccountContext);
 
   const onLoginSuccess = async (res) => {
     console.log("Login Success:", res.profileObj);
     setAccount(res.profileObj);
+    setShowlogoutButton(true);
     // setShowloginButton(false);
-    // setShowlogoutButton(true);
     // await addUser(res.profileObj);
   };
 

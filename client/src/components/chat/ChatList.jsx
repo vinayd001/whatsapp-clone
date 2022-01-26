@@ -1,4 +1,4 @@
-const ChatList = () => {
+const ChatList = ({ text }) => {
   return <div>ChatList</div>;
 };
 

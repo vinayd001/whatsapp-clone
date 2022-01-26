@@ -10,7 +10,7 @@ import { AccountContext } from "../../context/AccountProvider";
 // import { clientId } from '../../constants/data';
 
 //components
-// import InfoDrawer from "../../drawer/Drawer";
+import InfoDrawer from "../drawer/InfoDrawer";
 
 const useStyle = makeStyles({
   menuItem: {
@@ -65,7 +65,7 @@ const ChatListMenuDropDown = () => {
 
   return (
     <>
-      <MoreVertIcon onClick={handleClick} />
+      <MoreVertIcon onClick={handleClick} style={{ cursor: "pointer" }} />
       <Menu
         anchorEl={anchorEl}
         keepMounted
@@ -98,7 +98,9 @@ const ChatListMenuDropDown = () => {
         >
           {showlogoutButton ? (
             <GoogleLogout
-              clientId={"clientId"}
+              clientId={
+                "125589237579-aksuk676caaikg8ia3nts2m87pgf7jm8.apps.googleusercontent.com"
+              }
               buttonText="Logout"
               onLogoutSuccess={onSignoutSuccess}
               className={classes.logout}
@@ -106,7 +108,7 @@ const ChatListMenuDropDown = () => {
           ) : null}
         </MenuItem>
       </Menu>
-      {/* <InfoDrawer open={openDrawer} setOpen={setOpenDrawer} profile={true} /> */}
+      <InfoDrawer open={openDrawer} setOpen={setOpenDrawer} profile={true} />
     </>
   );
 };
