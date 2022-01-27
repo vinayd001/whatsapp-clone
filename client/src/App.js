@@ -1,7 +1,7 @@
-import { lazy, Suspense, useContext } from "react";
+import { lazy, Suspense } from "react";
 
-//components
-// import UserProvider from './context/UserProvider';
+// components
+import UserProvider from "./context/UserProvider";
 import AccountProvider from "./context/AccountProvider";
 
 import TemplateProvider from "./templates/TemplateProvider";
@@ -12,11 +12,13 @@ const Messenger = lazy(() => import("./components/Messenger"));
 function App() {
   return (
     <TemplateProvider>
-      <AccountProvider>
-        <Suspense fallback={<Loader />}>
-          <Messenger />
-        </Suspense>
-      </AccountProvider>
+      <UserProvider>
+        <AccountProvider>
+          <Suspense fallback={<Loader />}>
+            <Messenger />
+          </Suspense>
+        </AccountProvider>
+      </UserProvider>
     </TemplateProvider>
   );
 }

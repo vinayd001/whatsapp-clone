@@ -6,7 +6,7 @@ import { makeStyles, withStyles } from "@mui/styles";
 
 //components
 import ChatListPanel from "./chat/ChatListPanel";
-import Conversation from "./conversation/Conversation";
+import ConversationPanel from "./conversation/ConversationPanel";
 // import Menu from "./menu/Menu";
 // import ChatBox from "./chat/ChatBox";
 
@@ -56,7 +56,7 @@ const ChatDialog = ({ classes }) => {
           <ChatListPanel />
         </Box>
         <Box className={classname.rightComponent}>
-          <Conversation />
+          <ConversationPanel />
           {/* {Object.keys(person).length ? <ChatBox /> : <EmptyChat />} */}
         </Box>
       </Box>
